@@ -1,0 +1,157 @@
+{
+	"testSuiteName":"Registration Test Suite",
+    "webDriverExecutablesPath":"C://driver//geckodriver.exe",
+    "webDriver":"Firefox",
+    "WebUrl":"https://etherscan.io/register",
+	"testCases":
+	[
+		{
+			"testName": "Check Mandatory field error message",
+			"testType": "testMessageForManditoryField",
+			"fields":
+			[
+				{
+					"fieldName": "Username",
+                    "expectedError": "Username is invalid."
+				},
+				{
+					"fieldName": "Email Address",
+                    "expectedError": "Please enter a valid email address."
+				},
+				{
+					"fieldName": "Password",
+                    "expectedError": "Your password must be at least 5 characters long."
+				},
+				{
+					"fieldName": "Confirm Password",
+                    "expectedError": "Your password must be at least 5 characters long."
+				},
+				{
+					"fieldName": "I agree to the Terms and Conditions",
+                    "expectedError": "Please accept our Terms and Conditions."
+				}
+			]
+		},
+		{
+			"testType": "testFieldIsMasked",
+			"testName": "Validate Password is masked or not",
+			"fields": 
+			[
+				{
+					"fieldName": "Password"
+				},
+				{
+					"fieldName": "Confirm Password"
+				}
+			]
+		},
+		{
+			"testName": "Check Text Character Limit",
+			"testType": "testTextboxCharactorLimit",
+			"fields": 
+			[
+				{
+				"fieldName" : "Username",
+				"fieldLocator" : "#subject-id",
+				"charactorLimit" : "256"
+				},
+				{
+				"fieldName" : "Email",
+				"fieldLocator" : "#subject-id",
+				"charactorLimit" : "256"
+				},
+				{
+				"fieldName" : "Password",
+				"fieldLocator" : "#subject-id",
+				"charactorLimit" : "256"
+				},
+				{
+				"fieldName" : "Confirm Password",
+				"fieldLocator" : "#subject-id",
+				"charactorLimit" : "256"
+				}
+			]
+		},
+		{
+			"testName": "Alphanumeric Validation",
+			"testType": "testTextboxAlphanumeric",
+			"fields": 
+			[
+				{
+				"fieldName" : "Username",
+				"fieldLocator" : "#subject-id",
+				"charactorLimit" : "Welcome123@"
+				},
+				{
+				"fieldName" : "Username",
+				"fieldLocator" : "#subject-id",
+				"charactorLimit" : "welcome"
+				},
+				{
+				"fieldName" : "Username",
+				"fieldLocator" : "#subject-id",
+				"charactorLimit" : "256"
+				},
+				{
+				"fieldName" : "Confirm Password",
+				"fieldLocator" : "#subject-id",
+				"charactorLimit" : "256"
+				}
+			]
+		},
+		{
+			"testName": "Email Validation",
+			"testType": "testTextboxEmailValidation",
+			"fields": 
+			[
+				{
+				"fieldName" : "Email",
+				"fieldLocator" : "#subject-id",
+				"charactorLimit" : "test@email.com"
+				},
+				{
+				"fieldName" : "Username",
+				"fieldLocator" : "#subject-id",
+				"charactorLimit" : "test@"
+				},
+				{
+				"fieldName" : "Username",
+				"fieldLocator" : "#subject-id",
+				"charactorLimit" : "test@email"
+				},
+				{
+				"fieldName" : "Confirm Password",
+				"fieldLocator" : "#subject-id",
+				"charactorLimit" : "test@email@email.com"
+				}
+			]
+		},
+		{
+			"testName": "Password Validation",
+			"testType": "testTextboxPasswordValidation",
+			"fields": 
+			[
+				{
+				"fieldName" : "password",
+				"fieldLocator" : "#subject-id",
+				"charactorLimit" : "test@email.com"
+				},
+				{
+				"fieldName" : "Username",
+				"fieldLocator" : "#subject-id",
+				"charactorLimit" : "test@"
+				},
+				{
+				"fieldName" : "Username",
+				"fieldLocator" : "#subject-id",
+				"charactorLimit" : "test@email"
+				},
+				{
+				"fieldName" : "Confirm Password",
+				"fieldLocator" : "#subject-id",
+				"charactorLimit" : "test@email@email.com"
+				}
+			]
+		}
+	]
+}

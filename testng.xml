@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Etherscan UI Automation" verbose="1"  parallel = "tests" thread-count="15">
+	<test name="TestGeneralUseCasesEvents01" thread-count="1">
+		<parameter name="configJson" value="C:\workspace\etherscan\testSuite\registration.json"/>
+		<classes>
+			<class name="com.etherscan.executors.Base"/>
+		</classes>
+	</test>
+	
+	<test name="RegistrationValidatorTest" thread-count="1">
+		<parameter name="configJson" value="C:\workspace\etherscan\testSuite\registration.json"/>
+		<classes>
+			<class name="com.etherscan.executors.RegistrationValidator"/>
+		</classes>
+	</test>
+	
+</suite>
